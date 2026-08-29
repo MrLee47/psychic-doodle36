@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Art Portfolio</title>
+    <style>
+        /* Base Styling & Dark Mode Theme */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace; /* Fits your retro/zine vibe */
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .nav-links {
+            margin-top: 15px;
+        }
+        .nav-links a {
+            color: #aaaaaa;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive Art Grid Layout */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        .art-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333333;
+            overflow: hidden;
+            border-radius: 4px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .art-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffffff;
+        }
+        .art-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .art-info {
+            padding: 15px;
+        }
+        .art-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .art-medium {
+            color: #888888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>YOUR NAME / ALIAS</h1>
+        <p>Digital Illustration & Traditional Ink</p>
+        <div class="nav-links">
+            <a href="#digital">Digital</a>
+            <a href="#traditional">Traditional</a>
+            <a href="#about">About/Contact</a>
+        </div>
+    </header>
+
+    <!-- Art Gallery Section -->
+    <main class="portfolio-grid">
+        
+        <!-- Example Card 1: Digital -->
+        <div class="art-card" id="digital">
+            <img src="assets/images/vash-color.png" alt="Vash the Stampede Illustration">
+            <div class="art-info">
+                <div class="art-title">The Humanoid Typhoon</div>
+                <div class="art-medium">Digital (Procreate / Clip Studio Paint)</div>
+            </div>
+        </div>
+
+        <!-- Example Card 2: Traditional -->
+        <div class="art-card" id="traditional">
+            <img src="assets/images/yusuke-ink.png" alt="Yusuke Urameshi Ink Sketch">
+            <div class="art-info">
+                <div class="art-title">Spirit Gun</div>
+                <div class="art-medium">Traditional Pen & Ink on Grid Paper</div>
+            </div>
+        </div>
+
+        <!-- Add more art-cards here -->
+
+    </main>
+
+</body>
+</html>
