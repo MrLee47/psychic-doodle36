@@ -3,111 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Art Portfolio</title>
+    <title>ART / HELL | Portfolio</title>
     <style>
-        /* Base Styling & Dark Mode Theme */
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Courier New', Courier, monospace; /* Fits your retro/zine vibe */
+        /* --- RESET & ROOT CRUST --- */
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            /* Monospace gives it a raw, unpolished terminal/photocopy feel */
+            font-family: 'Courier New', Courier, monospace; 
             padding: 20px;
-        }
-        header {
-            text-align: center;
-            padding: 40px 0;
-        }
-        h1 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-        }
-        .nav-links {
-            margin-top: 15px;
-        }
-        .nav-links a {
-            color: #aaaaaa;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Responsive Art Grid Layout */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+        /* --- THE NOISE / CRT EFFECT --- */
+        /* This adds a gritty, analog scanline texture without slowing down image loading */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 9999;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
+        /* --- HEADER & PUNK UTILITY --- */
+        header {
             max-width: 1200px;
             margin: 40px auto;
+            border: 3px solid #ff0055; /* Acid punk pink */
+            padding: 30px;
+            background: #141414;
+            /* Box shadow shift makes it look like misaligned screen printing */
+            box-shadow: 6px 6px 0px #00ffaa; 
         }
+
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: -2px;
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #ff0055;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #00ffaa; /* Neon green */
+            margin-top: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            margin-top: 25px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #ffffff;
+            padding: 6px 12px;
+            margin-right: 10px;
+            background: #000;
+            display: inline-block;
+        }
+
+        .nav-links a:hover {
+            background: #ff0055;
+            color: #000;
+            border-color: #ff0055;
+            cursor: crosshair;
+        }
+
+        /* --- THE ART GRID (MINIMALIST BUT ROUGH) --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+
         .art-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333333;
-            overflow: hidden;
-            border-radius: 4px;
-            transition: transform 0.3s, border-color 0.3s;
+            background-color: #121212;
+            border: 2px dashed #444444; /* Zine cutout look */
+            padding: 15px;
+            transition: all 0.2s ease;
         }
+
         .art-card:hover {
-            transform: translateY(-5px);
-            border-color: #ffffff;
+            border: 2px solid #00ffaa;
+            transform: scale(1.01) rotate(0.5deg); /* Slight messy tilt */
         }
+
+        .image-wrapper {
+            background: #000;
+            border: 1px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
+
         .art-card img {
             width: 100%;
             height: auto;
             display: block;
+            /* Keeps your halftone/screentone pixels perfectly crisp on all devices */
+            image-rendering: pixelated; 
+            filter: grayscale(20%) contrast(110%); /* Punches up the ink shadows */
+            transition: filter 0.3s ease;
         }
+
+        .art-card:hover img {
+            filter: grayscale(0%) contrast(100%);
+        }
+
         .art-info {
+            margin-top: 15px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
+
+        .art-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .art-meta {
+            font-size: 0.85rem;
+            color: #888888;
+            margin-top: 4px;
+        }
+
+        /* --- ABOUT & BIO CRUST --- */
+        #about {
+            max-width: 1200px;
+            margin: 80px auto 40px auto;
+            border: 3px double #ffffff;
+            padding: 40px;
+            background: #111111;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #00ffaa;
+        }
+
+        .bio-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 800px;
+            color: #dddddd;
+        }
+
+        .flex-status {
+            margin-top: 30px;
+            background: #000;
+            border-left: 4px solid #ff0055;
             padding: 15px;
         }
-        .art-title {
+
+        .order-btn {
+            display: inline-block;
+            margin-top: 25px;
+            background: #00ffaa;
+            color: #000000;
             font-weight: bold;
-            margin-bottom: 5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 15px 30px;
+            box-shadow: 4px 4px 0px #ff0055;
+            transition: all 0.2s;
         }
-        .art-medium {
-            color: #888888;
-            font-size: 0.9rem;
+
+        .order-btn:hover {
+            box-shadow: 0px 0px 0px transparent;
+            transform: translate(4px, 4px);
+            background: #ffffff;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>bubba ott</h1>
-        <p>Digital Illustration & Traditional Ink</p>
+        <h1>YOUR_ALIAS_HERE</h1>
+        <div class="subtitle">THUMB DRAWN / HIGH CONTRAST / MANGA CRUST</div>
         <div class="nav-links">
-            <a href="#digital">Digital</a>
-            <a href="#traditional">Traditional</a>
-            <a href="#about">About/Contact</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#about">INFO // COMMISSIONS</a>
         </div>
     </header>
 
-    <!-- Art Gallery Section -->
-    <main class="portfolio-grid">
+    <main class="portfolio-grid" id="gallery">
         
-        <!-- Example Card 1: Digital -->
-        <div class="art-card" id="digital">
-            <img src="assets/images/vash-color.png" alt="Vash the Stampede Illustration">
+        <!-- CARD 1 -->
+        <div class="art-card">
+            <div class="image-wrapper">
+                <img src="assets/images/your-art-1.png" alt="Artwork description">
+            </div>
             <div class="art-info">
-                <div class="art-title">The Humanoid Typhoon</div>
-                <div class="art-medium">Digital (Procreate / Clip Studio Paint)</div>
+                <div class="art-title">VASH THE STAMPEDE</div>
+                <div class="art-meta">DIGITAL HALFTONE // 2026</div>
             </div>
         </div>
 
-        <!-- Example Card 2: Traditional -->
-        <div class="art-card" id="traditional">
-            <img src="assets/images/yusuke-ink.png" alt="Yusuke Urameshi Ink Sketch">
+        <!-- CARD 2 -->
+        <div class="art-card">
+            <div class="image-wrapper">
+                <img src="assets/images/your-art-2.png" alt="Artwork description">
+            </div>
             <div class="art-info">
-                <div class="art-title">Spirit Gun</div>
-                <div class="art-medium">Traditional Pen & Ink on Grid Paper</div>
+                <div class="art-title">THE WHEEL OF FORTUNE</div>
+                <div class="art-meta">TRADITIONAL INK SCAN // 2026</div>
             </div>
         </div>
 
-        <!-- Add more art-cards here -->
+        <!-- Copy-paste more cards as needed below -->
 
     </main>
+
+    <section id="about">
+        <h2>ABOUT / WORKFLOW</h2>
+        <p class="bio-text">
+            Independent illustrator blending raw 90s manga screentones with a messy street-zine aesthetic. Heavily rooted in punk, hip-hop culture, and underground anime styles. Focused on heavy black line confidence, structural body anatomy, and punchy composition.
+        </p>
+        
+        <div class="flex-status">
+            <strong>HARDWARE ALERT:</strong> Every single digital piece in this gallery was drawn completely with my thumb on a broken-in iPhone 13 Mini screen. No stylus, no tablet, just raw thumb-friction and clip layers.
+        </div>
+
+        <div class="flex-status" style="border-color: #00ffaa; margin-top: 15px;">
+            <strong>COMMISSION STATUS: OPEN</strong><br>
+            <span style="color: #aaa; font-size: 0.9rem;">Accepting custom character illustrations, manga pages, and tattoo designs.</span>
+        </div>
+
+        <a href="https://ko-fi.com" target="_blank" class="order-btn">
+            BOOK A COMMISSION VIA KO-FI ➔
+        </a>
+    </section>
 
 </body>
 </html>
