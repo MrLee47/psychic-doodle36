@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ART // BY THE THUMB</title>
+    <title>ARTWORK PORTFOLIO</title>
     <style>
-        /* --- STREET RESET --- */
+        /* --- Y2K RESET & PALETTE --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,112 +13,137 @@
         }
         
         body {
-            /* Smooth dark asphalt/concrete tone */
-            background-color: #1a1a1a; 
-            color: #ffffff;
-            font-family: 'Impact', 'Arial Black', sans-serif; /* Thick, heavy marker vibe */
+            /* Light, clean concrete/paper tone */
+            background-color: #f2f2f2; 
+            color: #2b2b2b;
+            /* Clean but blocky mono font for that self-published indie comic vibe */
+            font-family: 'Courier New', Courier, monospace; 
             padding: 20px;
-            letter-spacing: 0.5px;
+            letter-spacing: -0.5px;
         }
 
-        /* Subtle wall texture overlay using standard CSS gradients (no heavy image file) */
+        /* Subtle paper/photocopy texture */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
-            background-size: 8px 8px;
+            background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0);
+            background-size: 6px 6px;
             z-index: -1;
             pointer-events: none;
         }
 
-        /* --- THE WALL HEADER --- */
+        /* --- STICKER-SLAP HEADER --- */
         header {
             max-width: 1100px;
-            margin: 40px auto;
-            /* Heavy solid border like a thick piece of concrete or steel block */
-            border-bottom: 8px solid #ffffff; 
-            padding-bottom: 25px;
-            position: relative;
+            margin: 30px auto;
+            background: #ffffff;
+            /* Solid thick black line art border */
+            border: 4px solid #2b2b2b; 
+            padding: 30px;
+            /* Dusty, greyed-out pink drop shadow */
+            box-shadow: 8px 8px 0px #dcaebb; 
+            text-align: center;
         }
 
-        h1 {
-            font-size: 4rem;
+        /* Container for your future custom drawn logo */
+        .logo-area {
+            max-width: 500px;
+            margin: 0 auto 15px auto;
+        }
+
+        /* Placeholder text style before you upload your drawn logo image */
+        .logo-placeholder {
+            font-size: 2.8rem;
+            font-weight: 900;
             text-transform: uppercase;
-            line-height: 0.9;
+            color: #ff6ebb; /* Bright bubblegum pink */
+            text-shadow: 2px 2px 0px #2b2b2b;
             letter-spacing: -1px;
-            color: #ffffff;
-            /* Mimics a vinyl sticker slap overlay */
-            display: inline-block;
-            background: #000000;
-            padding: 5px 15px;
-            margin-bottom: 10px;
         }
 
         .tagline {
-            font-family: 'Courier New', monospace;
-            font-size: 0.95rem;
-            color: #d4ff00; /* Toxic neon yellow marker accent */
+            font-size: 0.9rem;
+            color: #7a7a7a;
             text-transform: uppercase;
             font-weight: bold;
-            margin-top: 10px;
             display: block;
+            margin-top: 5px;
         }
 
+        /* --- NAV BUTTONS --- */
         .nav-links {
             margin-top: 25px;
-            font-family: 'Courier New', monospace;
         }
 
         .nav-links a {
-            color: #ffffff;
+            color: #2b2b2b;
             text-decoration: none;
             font-weight: bold;
             text-transform: uppercase;
-            border: 2px solid #ffffff;
-            padding: 8px 16px;
-            margin-right: 12px;
-            background: transparent;
+            border: 2px solid #2b2b2b;
+            padding: 8px 20px;
+            margin: 0 5px;
+            background: #ffffff;
             display: inline-block;
-            transition: all 0.15s ease-in-out;
+            transition: all 0.15s ease;
         }
 
         .nav-links a:hover {
-            background: #ffffff;
-            color: #1a1a1a;
-            cursor: pointer;
-            /* Slight tilt to mimic hand-placed street art sticker */
-            transform: rotate(-1deg) translateY(-2px); 
+            background: #ff6ebb; /* Pops to bubblegum pink */
+            color: #ffffff;
+            border-color: #2b2b2b;
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 0px #2b2b2b;
         }
 
-        /* --- THE ART PIECE GALLERY --- */
+        /* --- THE INDIE ART GRID --- */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 40px;
+            gap: 35px;
             max-width: 1100px;
-            margin: 60px auto;
+            margin: 50px auto;
         }
 
         .art-card {
-            background-color: #0d0d0d;
-            /* Heavy, raw outline mimicking clean blackbook sketching lines */
-            border: 4px solid #ffffff; 
-            padding: 0;
+            background-color: #ffffff;
+            border: 4px solid #2b2b2b;
+            padding: 15px;
             position: relative;
-            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0px 0px 0px transparent;
+            transition: all 0.2s ease;
         }
 
-        /* Hover gives a sharp, heavy stencil drop shadow */
+        /* Hover gives it a solid O'Malley-style comic outline shadow */
         .art-card:hover {
             transform: translate(-4px, -4px);
-            box-shadow: 8px 8px 0px #d4ff00; 
+            box-shadow: 8px 8px 0px #2b2b2b; 
+        }
+
+        /* --- THE DYNAMIC ARROW ACCENT --- */
+        /* Hidden by default, pops out in bright pink when hovering over the card */
+        .art-card::after {
+            content: "➔";
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 2rem;
+            color: #ff6ebb;
+            font-weight: bold;
+            opacity: 0;
+            transform: rotate(-45deg) scale(0.5);
+            transition: all 0.2s ease;
+        }
+
+        .art-card:hover::after {
+            opacity: 1;
+            transform: rotate(-45deg) scale(1);
         }
 
         .image-wrapper {
-            background: #000;
-            border-bottom: 4px solid #ffffff;
-            position: relative;
+            background: #f0f0f0;
+            border: 2px solid #2b2b2b;
             overflow: hidden;
         }
 
@@ -126,157 +151,184 @@
             width: 100%;
             height: auto;
             display: block;
-            image-rendering: pixelated; /* Keeps your custom digital screentone dots perfectly crisp */
-            transition: opacity 0.2s ease;
+            image-rendering: pixelated; /* Keeps your halftone/screentone pixels perfectly sharp */
         }
 
         .art-info {
-            padding: 15px;
-            font-family: 'Courier New', monospace;
-            background: #0d0d0d;
+            margin-top: 12px;
+            padding-top: 8px;
         }
 
         .art-title {
-            font-size: 1.15rem;
-            font-weight: 900;
+            font-size: 1.1rem;
+            font-weight: bold;
             text-transform: uppercase;
-            color: #ffffff;
+            color: #2b2b2b;
         }
 
         .art-meta {
             font-size: 0.8rem;
-            color: #888888;
-            margin-top: 5px;
-            display: flex;
-            justify-content: space-between;
+            color: #7a7a7a;
+            margin-top: 3px;
         }
 
-        /* --- BLACKBOOK / BIO SECTION --- */
+        /* --- CHARACTER STAT / ABOUT SECTION --- */
         #about {
             max-width: 1100px;
-            margin: 100px auto 60px auto;
-            border: 4px dashed #ffffff; /* Cut-out cardboard stencil aesthetic */
+            margin: 80px auto 40px auto;
+            background: #ffffff;
+            border: 4px solid #2b2b2b;
             padding: 40px;
-            background: #0d0d0d;
+            box-shadow: 8px 8px 0px #dcaebb;
+        }
+
+        /* Split layout: text on left, game-style stat sheet on right */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .bio-side {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .stat-side {
+            flex: 1;
+            min-width: 300px;
+            background: #fafafa;
+            border: 2px dashed #2b2b2b;
+            padding: 25px;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-transform: uppercase;
-            margin-bottom: 25px;
-            color: #ffffff;
-            border-left: 8px solid #d4ff00;
-            padding-left: 15px;
-            line-height: 1;
+            margin-bottom: 20px;
+            color: #2b2b2b;
+            letter-spacing: -1px;
         }
 
         .bio-text {
-            font-family: 'Courier New', monospace;
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.6;
-            max-width: 850px;
-            color: #e0e0e0;
+            color: #444444;
         }
 
-        .crew-info {
-            margin-top: 30px;
-            font-family: 'Courier New', monospace;
-            background: #1a1a1a;
-            border: 2px solid #333333;
-            padding: 20px;
+        /* Character Profile/Stat Styling */
+        .profile-header {
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 2px solid #2b2b2b;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            color: #ff6ebb;
         }
 
-        .crew-info strong {
-            color: #d4ff00;
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .stat-label {
+            font-weight: bold;
+            color: #555555;
+        }
+
+        .stat-value {
+            color: #2b2b2b;
+            font-weight: bold;
         }
 
         .commission-btn {
-            display: inline-block;
-            margin-top: 35px;
-            background: #ffffff;
-            color: #0d0d0d;
-            font-size: 1.2rem;
-            font-weight: 900;
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            background: #2b2b2b;
+            color: #ffffff;
+            font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
-            padding: 16px 32px;
-            border: 3px solid #ffffff;
+            padding: 15px;
+            border: 2px solid #2b2b2b;
             transition: all 0.15s ease;
         }
 
         .commission-btn:hover {
-            background: #d4ff00;
-            border-color: #d4ff00;
-            color: #0d0d0d;
-            transform: scale(1.02);
-            box-shadow: 4px 4px 0px #ffffff;
+            background: #ff6ebb;
+            color: #ffffff;
+            box-shadow: 4px 4px 0px #2b2b2b;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>YOUR_ALIAS_HERE</h1>
-        <span class="tagline">// 100% THUMB-INKED ON IPHONE 13 MINI // RETRO MANGA CRUST //</span>
+        <div class="logo-area">
+            <!-- Swap this text placeholder out for your own <img> tag once you draw it! -->
+            <div class="logo-placeholder">YOUR_ALIAS</div>
+        </div>
+        <span class="tagline">// HIGH-CONTRAST INK // HAND-MADE DIGITAL SCREENTONES //</span>
+        
         <div class="nav-links">
-            <a href="#pieces">PIECES</a>
-            <a href="#about">BLACKBOOK // INFO</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#about">PROFILE // COMMISSIONS</a>
         </div>
     </header>
 
-    <main class="portfolio-grid" id="pieces">
+    <main class="portfolio-grid" id="gallery">
         
-        <!-- BLACKBOOK PIECE 1 -->
+        <!-- CARD 1 -->
         <div class="art-card">
             <div class="image-wrapper">
                 <img src="assets/images/your-art-1.png" alt="Artwork Description">
             </div>
             <div class="art-info">
                 <div class="art-title">VASH THE STAMPEDE</div>
-                <div class="art-meta">
-                    <span>DIGITAL HALFTONE</span>
-                    <span>[2026]</span>
-                </div>
+                <div class="art-meta">DIGITAL HALFTONE // 2026</div>
             </div>
         </div>
 
-        <!-- BLACKBOOK PIECE 2 -->
+        <!-- CARD 2 -->
         <div class="art-card">
             <div class="image-wrapper">
                 <img src="assets/images/your-art-2.png" alt="Artwork Description">
             </div>
             <div class="art-info">
                 <div class="art-title">THE WHEEL OF FORTUNE</div>
-                <div class="art-meta">
-                    <span>TRADITIONAL PEN & INK</span>
-                    <span>[2026]</span>
-                </div>
+                <div class="art-meta">TRADITIONAL PEN & INK // 2026</div>
             </div>
         </div>
 
-        <!-- Drop more cards right here when you add artwork files -->
+        <!-- Drop more art-cards here -->
 
     </main>
 
     <section id="about">
-        <h2>BLACKBOOK / PROCESS</h2>
-        <p class="bio-text">
-            Independent illustrator combining the structural foundation of raw blackbook ink sketches with 90s anime screentones. Heavily influenced by graffiti handstyles, hip-hop rhythm, and underground manga characters. Focused on heavy line weight, fast-moving perspective, and crisp halftone shading.
-        </p>
-        
-        <div class="crew-info">
-            <strong>HARDWARE PROFILE:</strong> No tablet, no desktop, no stylus. Every digital halftone and anchor point in this collection was laid down piece-by-piece using my right thumb on an iPhone 13 Mini viewport screen. Built through 4-6 raw layers of structural anatomy before pulling down the final outlines.
-        </div>
+        <div class="about-container">
+            
+            <!-- LEFT SIDE: BIO -->
+            <div class="bio-side">
+                <h2>ARTIST PROFILE</h2>
+                <p class="bio-text">
+                    Illustrator combining the high-action comic line weights of Todd McFarlane with 90s manga layout structures. Heavily inspired by the chunky, expressive Y2K aesthetic of Scott Pilgrim and the grit of retro shonen blackbooks. Focused on heavy line variation, structural anatomy builds, and clean digital halftone finishes.
+                </p>
+                <a href="https://ko-fi.com" target="_blank" class="commission-btn">
+                    REQUEST A COMMISSION ➔
+                </a>
+            </div>
 
-        <div class="crew-info" style="border-left: 4px solid #d4ff00; background: #000;">
-            <strong>SLOTS AVAILABLE // COMMISSIONS OPEN</strong><br>
-            <span style="color: #888888; font-size: 0.9rem;">Drop me a message on socials for custom tag/character design, tattoo mockups, or full manga flats.</span>
-        </div>
-
-        <a href="https://ko-fi.com" target="_blank" class="commission-btn">
-            LOCK IN A COMMISSION ➔
-        </a>
-    </section>
-
-</body>
-</html>
+            <!-- RIGHT SIDE: SCOTT PILGRIM / MANGA STAT CARD -->
+            <div class="stat-side">
+                <div class="profile-header">EQUIPMENT & PROCESS</div>
+                
+                <div class="stat-row">
+                    <span class="stat-label">HARDWARE:</span>
+                    <span class="stat-value">iPhone 13 Mini</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">STYLUS:</span>
