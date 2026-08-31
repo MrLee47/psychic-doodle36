@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bubba ott</title>
+    <title>ARTWORK PORTFOLIO</title>
     <style>
         /* --- Y2K RESET & PALETTE --- */
         * {
@@ -31,41 +31,26 @@
             pointer-events: none;
         }
 
-        /* --- STICKER-SLAP HEADER --- */
+        /* --- MINIMALIST HEADER --- */
         header {
             max-width: 1100px;
             margin: 30px auto;
             background: #ffffff;
             border: 4px solid #2b2b2b; 
-            padding: 30px;
-            box-shadow: 8px 8px 0px #dbbebf; /* Muted tonal pink shadow */
+            padding: 40px 30px;
+            box-shadow: 8px 8px 0px #dbbebf; 
             text-align: center;
         }
 
-        .logo-area {
-            max-width: 500px;
-            margin: 0 auto 15px auto;
-        }
-
-        .logo-placeholder {
-            font-size: 2.8rem;
+        /* Raw, unboxed pink alias text */
+        .logo-text {
+            font-size: 3.5rem;
             font-weight: 900;
             text-transform: uppercase;
-            color: #2b2b2b; 
-            background: #f5e2e3; /* Your pale rose shade */
-            display: inline-block;
-            padding: 2px 15px;
-            border: 3px solid #2b2b2b;
+            color: #f5e2e3; /* Your exact pale rose shade */
+            text-shadow: 3px 3px 0px #2b2b2b; /* Crisp dark outline shadow */
             letter-spacing: -1px;
-        }
-
-        .tagline {
-            font-size: 0.9rem;
-            color: #7a7a7a;
-            text-transform: uppercase;
-            font-weight: bold;
-            display: block;
-            margin-top: 12px;
+            display: inline-block;
         }
 
         /* --- NAV BUTTONS --- */
@@ -87,7 +72,7 @@
         }
 
         .nav-links a:hover {
-            background: #f5e2e3; /* Muted pink hover */
+            background: #f5e2e3; 
             color: #2b2b2b;
             transform: translateY(-2px);
             box-shadow: 4px 4px 0px #2b2b2b;
@@ -165,7 +150,7 @@
             margin-top: 3px;
         }
 
-        /* --- CHARACTER STAT / ABOUT SECTION --- */
+        /* --- UNIFIED SINGLE-COLUMN ABOUT SECTION --- */
         #about {
             max-width: 1100px;
             margin: 80px auto 40px auto;
@@ -173,25 +158,6 @@
             border: 4px solid #2b2b2b;
             padding: 40px;
             box-shadow: 8px 8px 0px #dbbebf;
-        }
-
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .bio-side {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .stat-side {
-            flex: 1;
-            min-width: 300px;
-            background: #fafafa;
-            border: 2px dashed #2b2b2b;
-            padding: 25px;
         }
 
         h2 {
@@ -204,49 +170,30 @@
 
         .bio-text {
             font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #444444;
+            margin-bottom: 20px;
         }
 
-        .profile-header {
-            font-weight: bold;
-            text-transform: uppercase;
-            border-bottom: 2px solid #2b2b2b;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            color: #2b2b2b;
-            background-color: #f5e2e3;
-            display: inline-block;
-            padding: 2px 8px;
-        }
-
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+        .hardware-note {
+            background-color: #fafafa;
+            border-left: 4px solid #dbbebf;
+            padding: 15px;
             font-size: 0.9rem;
-        }
-
-        .stat-label {
-            font-weight: bold;
+            margin-bottom: 25px;
             color: #555555;
-        }
-
-        .stat-value {
-            color: #2b2b2b;
-            font-weight: bold;
+            line-height: 1.5;
         }
 
         .commission-btn {
-            display: block;
+            display: inline-block;
             text-align: center;
-            margin-top: 30px;
             background: #2b2b2b;
             color: #ffffff;
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
-            padding: 15px;
+            padding: 15px 30px;
             border: 2px solid #2b2b2b;
             transition: all 0.15s ease;
         }
@@ -257,15 +204,31 @@
             box-shadow: 4px 4px 0px #2b2b2b;
             transform: translateY(-2px);
         }
+
+        /* --- BOTTOM SIGNATURE SLOT --- */
+        .signature-container {
+            text-align: center;
+            margin: 60px auto 20px auto;
+            max-width: 250px;
+        }
+
+        .signature-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0.75;
+            transition: opacity 0.3s;
+        }
+
+        .signature-container img:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-area">
-            <div class="logo-placeholder">bubba ott</div>
-        </div>
-        <span class="tagline"></span>
+        <div class="logo-text">YOUR_ALIAS</div>
         
         <div class="nav-links">
             <a href="#gallery">GALLERY</a>
@@ -344,8 +307,20 @@
     </main>
 
     <section id="about">
-        <div class="about-container">
-            
-            <div class="bio-side">
-                <h2>ARTIST PROFILE</h2>
-                <p class="bio-text">
+        <h2>ARTIST PROFILE // COMMISSIONS OPEN [●]</h2>
+        
+        <p class="bio-text">
+            Illustrator combining the high-action comic line weights of Todd McFarlane with 90s manga layout structures. Heavily inspired by the chunky, expressive Y2K aesthetic of Scott Pilgrim and the grit of retro shonen blackbooks. Focused on heavy line variation, structural anatomy builds, and clean digital halftone finishes.
+        </p>
+        
+        <p class="hardware-note">
+            <strong>PROCESS PROFILE:</strong> Every digital halftone and outline in this gallery was drawn piece-by-piece using my right thumb on an iPhone 13 Mini screen. No stylus, tablet, or desktop interface. Each illustration is built through 4-6 raw layers of structural skeletal anatomy before laying down final ink linework.
+        </p>
+
+        <a href="https://ko-fi.com" target="_blank" class="commission-btn">
+            REQUEST A COMMISSION ➔
+        </a>
+    </section>
+
+    <!-- SIGNATURE SLOT AT THE ABSOLUTE BOTTOM -->
+    <footer class="signature-container">
