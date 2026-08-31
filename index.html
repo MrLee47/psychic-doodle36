@@ -13,16 +13,14 @@
         }
         
         body {
-            /* Light, clean concrete/paper tone */
             background-color: #f2f2f2; 
             color: #2b2b2b;
-            /* Clean but blocky mono font for that self-published indie comic vibe */
             font-family: 'Courier New', Courier, monospace; 
             padding: 20px;
             letter-spacing: -0.5px;
         }
 
-        /* Subtle paper/photocopy texture */
+        /* Paper/photocopy texture background */
         body::before {
             content: "";
             position: fixed;
@@ -38,26 +36,22 @@
             max-width: 1100px;
             margin: 30px auto;
             background: #ffffff;
-            /* Solid thick black line art border */
             border: 4px solid #2b2b2b; 
             padding: 30px;
-            /* Dusty, greyed-out pink drop shadow */
             box-shadow: 8px 8px 0px #dcaebb; 
             text-align: center;
         }
 
-        /* Container for your future custom drawn logo */
         .logo-area {
             max-width: 500px;
             margin: 0 auto 15px auto;
         }
 
-        /* Placeholder text style before you upload your drawn logo image */
         .logo-placeholder {
             font-size: 2.8rem;
             font-weight: 900;
             text-transform: uppercase;
-            color: #ff6ebb; /* Bright bubblegum pink */
+            color: #ff6ebb; /* Bubblegum pink */
             text-shadow: 2px 2px 0px #2b2b2b;
             letter-spacing: -1px;
         }
@@ -90,7 +84,7 @@
         }
 
         .nav-links a:hover {
-            background: #ff6ebb; /* Pops to bubblegum pink */
+            background: #ff6ebb; 
             color: #ffffff;
             border-color: #2b2b2b;
             transform: translateY(-2px);
@@ -100,6 +94,7 @@
         /* --- THE INDIE ART GRID --- */
         .portfolio-grid {
             display: grid;
+            /* Creates a multi-row grid that reflows depending on screen width */
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 35px;
             max-width: 1100px;
@@ -111,18 +106,15 @@
             border: 4px solid #2b2b2b;
             padding: 15px;
             position: relative;
-            box-shadow: 0px 0px 0px transparent;
             transition: all 0.2s ease;
         }
 
-        /* Hover gives it a solid O'Malley-style comic outline shadow */
         .art-card:hover {
             transform: translate(-4px, -4px);
             box-shadow: 8px 8px 0px #2b2b2b; 
         }
 
-        /* --- THE DYNAMIC ARROW ACCENT --- */
-        /* Hidden by default, pops out in bright pink when hovering over the card */
+        /* Interactive pink hover arrow */
         .art-card::after {
             content: "➔";
             position: absolute;
@@ -151,7 +143,7 @@
             width: 100%;
             height: auto;
             display: block;
-            image-rendering: pixelated; /* Keeps your halftone/screentone pixels perfectly sharp */
+            image-rendering: pixelated; 
         }
 
         .art-info {
@@ -182,7 +174,6 @@
             box-shadow: 8px 8px 0px #dcaebb;
         }
 
-        /* Split layout: text on left, game-style stat sheet on right */
         .about-container {
             display: flex;
             flex-wrap: wrap;
@@ -216,7 +207,6 @@
             color: #444444;
         }
 
-        /* Character Profile/Stat Styling */
         .profile-header {
             font-weight: bold;
             text-transform: uppercase;
@@ -269,7 +259,6 @@
 
     <header>
         <div class="logo-area">
-            <!-- Swap this text placeholder out for your own <img> tag once you draw it! -->
             <div class="logo-placeholder">YOUR_ALIAS</div>
         </div>
         <span class="tagline">// HIGH-CONTRAST INK // HAND-MADE DIGITAL SCREENTONES //</span>
@@ -280,23 +269,46 @@
         </div>
     </header>
 
+    <!-- Main Grid containing all 6 art slots -->
     <main class="portfolio-grid" id="gallery">
         
-        <!-- CARD 1 -->
+        <!-- SLOT 1: Vash -->
         <div class="art-card">
             <div class="image-wrapper">
-                <img src="assets/images/your-art-1.png" alt="Artwork Description">
+                <img src="assets/images/vash-finished.png" alt="Vash the Stampede Digital Art">
             </div>
             <div class="art-info">
-                <div class="art-title">VASH THE STAMPEDE</div>
+                <div class="art-title">THE HUMANOID TYPHOON</div>
                 <div class="art-meta">DIGITAL HALFTONE // 2026</div>
             </div>
         </div>
 
-        <!-- CARD 2 -->
+        <!-- SLOT 2: Yusuke Traditional -->
         <div class="art-card">
             <div class="image-wrapper">
-                <img src="assets/images/your-art-2.png" alt="Artwork Description">
+                <img src="assets/images/yusuke-ink.png" alt="Yusuke Traditional Ink Sketch">
+            </div>
+            <div class="art-info">
+                <div class="art-title">SPIRIT GUN</div>
+                <div class="art-meta">TRADITIONAL PEN & INK // 2026</div>
+            </div>
+        </div>
+
+        <!-- SLOT 3: Screentone Piece -->
+        <div class="art-card">
+            <div class="image-wrapper">
+                <img src="assets/images/screentone-character.png" alt="Manga Character Design">
+            </div>
+            <div class="art-info">
+                <div class="art-title">BLACK STAR</div>
+                <div class="art-meta">DIGITAL HALFTONE // 2026</div>
+            </div>
+        </div>
+
+        <!-- SLOT 4: Tarot/Composition Piece -->
+        <div class="art-card">
+            <div class="image-wrapper">
+                <img src="assets/images/tarot-sketch.png" alt="The Wheel of Fortune Traditional Art">
             </div>
             <div class="art-info">
                 <div class="art-title">THE WHEEL OF FORTUNE</div>
@@ -304,31 +316,33 @@
             </div>
         </div>
 
-        <!-- Drop more art-cards here -->
+        <!-- SLOT 5: Digital Slot Placeholder -->
+        <div class="art-card">
+            <div class="image-wrapper">
+                <img src="assets/images/art-slot-5.png" alt="Artwork Description">
+            </div>
+            <div class="art-info">
+                <div class="art-title">ARTWORK TITLE FIVE</div>
+                <div class="art-meta">DIGITAL DRAWING // 2026</div>
+            </div>
+        </div>
+
+        <!-- SLOT 6: Traditional Slot Placeholder -->
+        <div class="art-card">
+            <div class="image-wrapper">
+                <img src="assets/images/art-slot-6.png" alt="Artwork Description">
+            </div>
+            <div class="art-info">
+                <div class="art-title">ARTWORK TITLE SIX</div>
+                <div class="art-meta">TRADITIONAL INK // 2026</div>
+            </div>
+        </div>
 
     </main>
 
     <section id="about">
         <div class="about-container">
             
-            <!-- LEFT SIDE: BIO -->
             <div class="bio-side">
                 <h2>ARTIST PROFILE</h2>
                 <p class="bio-text">
-                    Illustrator combining the high-action comic line weights of Todd McFarlane with 90s manga layout structures. Heavily inspired by the chunky, expressive Y2K aesthetic of Scott Pilgrim and the grit of retro shonen blackbooks. Focused on heavy line variation, structural anatomy builds, and clean digital halftone finishes.
-                </p>
-                <a href="https://ko-fi.com" target="_blank" class="commission-btn">
-                    REQUEST A COMMISSION ➔
-                </a>
-            </div>
-
-            <!-- RIGHT SIDE: SCOTT PILGRIM / MANGA STAT CARD -->
-            <div class="stat-side">
-                <div class="profile-header">EQUIPMENT & PROCESS</div>
-                
-                <div class="stat-row">
-                    <span class="stat-label">HARDWARE:</span>
-                    <span class="stat-value">iPhone 13 Mini</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">STYLUS:</span>
